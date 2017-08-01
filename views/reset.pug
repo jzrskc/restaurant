@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .inner
+    //- kada izostavimo action="" to znaci da se odnosi na ovaj trenutni url
+    //- korisno kada imamo /account/reset/:token
+    form.form(method="POST")
+      h2 Reset Your Password
+      label(for="password") Password
+      input(type="password" name="password")
+      label(for="password-confirm") Confirm Password
+      input(type="password" name="password-confirm")
+      input(type="submit" value="Reset Password →")

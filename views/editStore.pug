@@ -1,0 +1,22 @@
+extends layout
+
+include mixins/_storeForm
+
+block content
+  .inner
+    //- pre= h.dump(store)
+    h2 #{title}
+    +storeForm(store)
+    
+//- Ova stranica sluzi i za addNew i za Edit store! Formi saljemo store:
+//- +storeForm(store) => mixin storeForm(store = {})
+
+//- ako ima store._id onda edit, u suprotnom add
+//- form(action=`/add/${store._id || ''}` method="POST" class="card")
+
+//- value je ili store.name ili nista
+//- input(type="text" name="name" value=store.name)
+
+//- Na ovaj nacin pristupamo adresi iz Models
+//- input(type="text" id="address" name="location[address]"
+//- app.use(bodyParser.urlencoded({ extended: true })); Mora biti TRUE
